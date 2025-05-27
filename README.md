@@ -33,7 +33,7 @@ nudge_system/
 
 ## Usage
 
-- Run the below command to install all packages and dependencies
+- Run the below command to install all NodeJS packages and dependencies
   ```bash
   npm install
 
