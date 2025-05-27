@@ -1,6 +1,6 @@
 # AI-Powered Retail Performance Nudge System for FMCG Brand
 
-Design and implement a scalable system using NodeJS, ExpressJS, MongoDB, Redis and OpenAI to analyze high-volume retailer sales data and automatically generate nudges based on individualperformance or group behavior trends.
+Design and implement a scalable system using NodeJS, ExpressJS, MongoDB, Redis and OpenAI to analyze high-volume retailer sales data and automatically generate nudges based on individual performance or group behavior trends.
 
 ## Features
 
