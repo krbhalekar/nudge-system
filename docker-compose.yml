@@ -1,0 +1,42 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    container_name: nudge_app
+    ports:
+      - "9766:9766"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/fmcg
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    depends_on:
+      - mongo
+      - redis
+
+  worker:
+    build: .
+    container_name: nudge_worker
+    command: ["node", "jobs/nudgeProcessor.js"]
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/fmcg
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    depends_on:
+      - mongo
+      - redis
+
+  mongo:
+    image: mongo:6.0
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  redis:
+    image: redis:7-alpine
+    container_name: redis
+    ports:
+      - "6379:6379"
+
+volumes:
+  mongo_data:
