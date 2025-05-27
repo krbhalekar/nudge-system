@@ -6,8 +6,9 @@ Design and implement a scalable system using NodeJS, ExpressJS, MongoDB, Redis a
 
 - Create Sales Entry API
 - Store the Sales Entry in MongoDB
-- Create Nudge API for a specific Retailer ID
-- Checks and Compares Last Month and Total Month Sales, Analyse the Sales Drop > 30%
+- Create Nudge API for a specific Retailer ID and add the job details in Redis queue
+- Nudge Processor listening to the Redis queue and fetching the Retailer ID from the job details
+- Checks and Compares Last Month and Total Month Sales for the given Retailer ID, Analyse the Sales Drop > 30%
 - Pass the Nudge Message to Open AI
 
 ## Project Structure
